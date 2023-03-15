@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeScreen from '../screens/welcome';
 import DetailsScreen from '../screens/foodmenuscreen';
-
+import CaloriesScreen from '../screens/calories';
 
 
 
@@ -15,11 +15,10 @@ const Stack= createNativeStackNavigator()
 export default function Authnavigation() {
   return (
     <NavigationContainer >
-      <Stack.Navigator  screenOptions={{
-        headerShown:false
-      }}>
-     <Stack.Screen name='Home' component={HomeScreen}/>
-     <Stack.Screen name='Details' component={DetailsScreen}/>
+      <Stack.Navigator  >        
+     <Stack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}/>
+     <Stack.Screen name='Details' component={DetailsScreen} options={{headerShown:false}}/>
+     <Stack.Screen  name='Calories' component={CaloriesScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   )

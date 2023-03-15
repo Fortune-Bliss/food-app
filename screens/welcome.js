@@ -12,7 +12,7 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const  TopIcons=()=>{
     return(
-      <View style={{marginVertical:10,justifyContent:"center",alignContent: ':"center',alignItems: 'center',flexDirection:"row"}}>
+      <View style={{marginVertical:10,justifyContent:"center",alignItems: 'center',flexDirection:"row"}}>
         <View style={{}}>
           <Text style={{fontSize:21,marginHorizontal:130,fontWeight:"600"}}>Plantwise</Text>
         </View>
@@ -26,7 +26,7 @@ const  TopIcons=()=>{
 
 const  FirstView=()=>{
   return(
-    <View style={{marginVertical:10,justifyContent:"center",alignContent: ':"center',alignItems: 'center'}}>
+    <View style={{marginVertical:10,justifyContent:"center",alignItems: 'center'}}>
       <View style={{flexDirection:"row"}}>
        <Text style={{fontSize:17,fontWeight:"500",color:"#616161",textTransform:"capitalize"}}>price</Text>
        <Text style={{fontSize:17,fontWeight:"500",color:"#616161",textTransform:"capitalize",marginHorizontal:95}}>meal type</Text>
@@ -38,7 +38,7 @@ const  FirstView=()=>{
 
 const NewView =()=>{
   return(
-    <View style={{marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems: 'center'}}>
+    <View style={{marginVertical:30,justifyContent:"center",alignItems: 'center'}}>
       <View style={{flexDirection:"row"}}>
         <Text style={{fontSize:19,fontWeight:"600",color:"#212121",textTransform:"capitalize"}}>$ 2.6</Text>
         <Text style={{fontSize:19,fontWeight:"600",color:"#212121",textTransform:"capitalize",marginHorizontal:75}}>nutritional balance</Text>
@@ -51,7 +51,7 @@ const NewView =()=>{
 
 const SecondView=()=>{
   return(
-    <View style={{    flexDirection:"row",marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems: 'center'}}>
+    <View style={{    flexDirection:"row",marginVertical:30,justifyContent:"center",alignItems: 'center'}}>
         <View style={{
           width:150,
           height:150,
@@ -68,7 +68,8 @@ const SecondView=()=>{
         </View>
         <View style={{marginHorizontal:50}} >
        <Text style={{fontWeight:"bolder",color:"#bcaaa4",textTransform:"capitalize"}}> 
-       <View style={{backgroundColor:"#00695c",width:8,height:8,flexDirection:"row",borderRadius:4,marginHorizontal:5}}>
+       <View style={{backgroundColor:"#00695c",width:8,height:8,flexDirection:"row",
+       borderRadius:4,marginHorizontal:5}}>
         </View>vegetable (50%)</Text>
        
         <Text style={{fontWeight:"bolder",color:"#bcaaa4",textTransform:"capitalize",marginVertical:10}}>
@@ -86,7 +87,7 @@ const SecondView=()=>{
 
 const TextView=()=>{
   return(
-    <View  style={{marginVertical:5,justifyContent:"center",alignContent: ':"center',alignItems: 'center'}}>
+    <View  style={{marginVertical:5,justifyContent:"center",alignItems: 'center'}}>
       <Text style={{color:"#bcaaa4",fontWeight:"bolder",textTransform:"capitalize",marginVertical:4}}>aim to build the plate in the following breakdown</Text>
       <Text style={{color:"#bcaaa4",fontWeight:"bolder",textTransform:"capitalize",marginVertical:4}}>50 % vegetable, 20% protein , 30 % caborhydrates</Text>
     </View>
@@ -95,13 +96,13 @@ const TextView=()=>{
 
 const ClimateView=()=>{
   return(
-    <View  style={{marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems: 'center'}}>
+    <View  style={{marginVertical:30,justifyContent:"center",alignItems: 'center'}}>
         <View style={{flexDirection:"row" ,}}>
                <View style={{padding:15}}>
                 <Fontisto name='day-sunny' size={18} style={{color:"black",}}/>
                    <Text style={{fontWeight:"400",fontSize:15,textTransform:"capitalize",color:"#212121",marginVertical:10}}>climate</Text>
                 </View>
-              <View style={{marginHorizontal:40,backgroundColor:"#ffcdd2",padding:15,borderRadius:5}}>
+              <View style={{marginHorizontal:70,backgroundColor:"#ffcdd2",padding:15,borderRadius:5}}>
                 <Ionicons name='leaf-outline' size={18} style={{color:"black",}}/>
                     <Text style={{fontWeight:"400",fontSize:15,textTransform:"capitalize",color:"#212121",marginVertical:10}}>nutrition</Text>
               </View>
@@ -116,19 +117,6 @@ const ClimateView=()=>{
 
 
 
-const  DownBotton=({navigation})=>{
-  return(
-<View>
-
-</View>
-  )
-}
-
-
-
-
-
-
 
 
 function Home() {
@@ -140,7 +128,7 @@ function Home() {
              <SecondView/>
              <TextView/>
              <ClimateView/>
-             <DownBotton/>
+        
         </ScrollView>
   )
 }
@@ -149,19 +137,23 @@ function Home() {
 
 export default function HomeScreen({navigation}) {
       return (
-        <View>
+        <ScrollView>
 <Home/>
-      <View  style={{overflow:"hidden",marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems:
+
+    <View>
+        <View  style={{overflow:"hidden",marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems:
      'center',flexDirection:"row"}}>
-      <View style={{flexDirection:"row"}}>
-      <AntDesign name="hearto" size={24} color="black"style={{marginHorizontal:5}} />
+      <View style={{flexDirection:"row",marginHorizontal:20}}>
+      <AntDesign name="hearto" size={24} color="black"style={{marginHorizontal:10}} />
  <MaterialCommunityIcons style={{marginHorizontal:50}}  name="transit-connection-horizontal" size={24}/>
       </View>
 
-<Button
-title='generate new food' onPress={()=>navigation.navigate("Details")}/>
-        </View>
+<View style={{borderRadius:10,overflow:"hidden",}}>
+<Button title='generate new meal' onPress={()=>navigation.navigate("Details")}/>
+</View>
+  </View>
        </View>
+       </ScrollView>
       )
     }
 
