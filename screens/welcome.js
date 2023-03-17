@@ -135,6 +135,34 @@ function Home() {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export default function HomeScreen({navigation}) {
       return (
         <ScrollView>

@@ -5,7 +5,7 @@ import Friuts from '../components/fruits';
 import { Fontisto } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-const TopNavigation=()=>{
+const TopView=()=>{
     return(
       <View style={{  flexDirection:"row",marginVertical:40,justifyContent:"center",alignItems: 'center'}}>
   
@@ -114,14 +114,32 @@ const TextArea=()=>{
         </View>
     )
  }
-export default function CaloriesScreen() {
+
+ function Calories(){
+    return(
+        <View>
+           <TopView/>
+           <TextArea/>
+           <FruitList/>
+           <ShoppingButton/>
+           <BottomIcons/>
+        </View>
+    )
+ }
+export default function CaloriesScreen({navigation}) {
   return (
     <ScrollView>
-      <TopNavigation/>
-      <TextArea/>
-      <FruitList/>
-      <ShoppingButton/>
-      <BottomIcons/>
+        <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",marginTop:20}}>
+            <TouchableOpacity onPress={()=>navigation.navigate("Details")} >
+           <View >
+           <Ionicons name="ios-chevron-back-outline" size={24} color="black" />
+           </View>
+        </TouchableOpacity>
+           <View style={{justifyContent:"center",alignItems:"center"}}>
+               <Text style={{marginHorizontal:130,fontSize:25,fontWeight:"bold"}}>calories</Text>
+           </View>
+        </View>
+         <Calories/>
     </ScrollView>
   )
 }

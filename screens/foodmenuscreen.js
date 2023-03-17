@@ -1,4 +1,4 @@
-import { View, Text,ScrollView,SafeAreaView,Button,TouchableOpacity ,TouchableHighlight} from 'react-native'
+import { View, Text,ScrollView,SafeAreaView,Button,TouchableOpacity ,StyleSheet,TouchableHighlight} from 'react-native'
 import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
@@ -17,7 +17,7 @@ const  TopIcons=()=>{
     return(
       <View style={{marginVertical:10,justifyContent:"center",alignItems: 'center',flexDirection:"row"}}>
         <View style={{}}>
-          <Text style={{fontSize:21,marginHorizontal:130,fontWeight:"600"}}>Plantwise</Text>
+          <Text style={{fontSize:21,marginHorizontal:130,fontWeight:"600"}}>meal Type</Text>
         </View>
         <View style={{marginVertical:10}}>
           <AntDesign name='menufold' size={20} color="black"/>
@@ -39,18 +39,16 @@ const  FirstView=()=>{
   )
 }
 
-const NewView =()=>{
+const NewView=()=>{
   return(
     <View style={{marginVertical:30,justifyContent:"center",alignItems: 'center'}}>
-      <View style={{flexDirection:"row"}}>
-        <Text style={{fontSize:19,fontWeight:"600",color:"#7b1fa2",textTransform:"capitalize"}}>$ 2.6</Text>
-        <Text style={{fontSize:19,fontWeight:"600",color:"#7b1fa2",textTransform:"capitalize",marginHorizontal:75}}>nutritional balance</Text>
-        <Text style={{fontSize:19,fontWeight:"600",color:"#7b1fa2",textTransform:"capitalize"}}>4</Text>
-      </View>
+
+
+
+      
     </View>
   )
 }
-
 
 const SecondView=()=>{
   return(
@@ -113,21 +111,7 @@ const SecondView=()=>{
        </View>
       </View>
   )
-}
-
-const TextArea=()=>{
-  return(
-    <View style={{justifyContent:"center",alignItems:"center"}}>
-     <View style={{flexDirection:"row"}}>
-     <Text style={{marginRight:40,fontSize:30,fontWeight:"500",color:"#212121",textTransform:"capitalize"}}>current meal</Text>
-     <TouchableOpacity>
-    <Text style={{color:"",marginHorizontal:50,marginTop:10}}>edit items</Text>
-     </TouchableOpacity>
-     </View>
-    </View>
-  )
-}
-
+  }
 
 const FruitList=()=>{
   return(
@@ -146,8 +130,8 @@ function Details(){
  <FirstView/>
  <NewView/>
  <SecondView/>
- <TextArea/>
- <FruitList/>
+
+ 
 
   </ScrollView>
   )
@@ -158,19 +142,38 @@ export default function DetailsScreen({navigation}) {
   return (
     <View>
       <Details/>
+     
       <View>
-        <View  style={{overflow:"hidden",marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems:
-     'center',flexDirection:"row"}}>
-      <View style={{flexDirection:"row",marginHorizontal:15}}>
-      <AntDesign name="hearto" size={24} color="black"style={{marginHorizontal:5}} />
- <MaterialCommunityIcons style={{marginHorizontal:50}}  name="transit-connection-horizontal" size={24}/>
+         
+
+    <View style={{justifyContent:"center",alignItems:"center"}}>
+     <View style={{flexDirection:"row"}}>
+     <Text style={{marginRight:40,fontSize:30,fontWeight:"500",color:"#212121",textTransform:"capitalize"}}>current meal</Text>
+     <TouchableOpacity onPress={()=>navigation.navigate("Fruits")} >
+    <Text style={{color:"",marginHorizontal:50,marginTop:10}}>edit items</Text>
+     </TouchableOpacity>
+     </View>
+    </View>
+  
+
       </View>
 
-<View style={{borderRadius:10,overflow:"hidden",}}>
-<Button title='generate new fruit' onPress={()=>navigation.navigate("Calories")}/>
-</View>
-  </View>
+      <FruitList/>
+      <View>
+        
+         <View  style={{overflow:"hidden",marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems:'center',flexDirection:"row"}}>
+      <View style={{flexDirection:"row",marginHorizontal:15}}>
+      <AntDesign name="hearto" size={24} color="black"style={{marginHorizontal:5}} />
+      <MaterialCommunityIcons style={{marginHorizontal:50}}  name="transit-connection-horizontal" size={24}/>
+        </View>
+
+         <View style={{borderRadius:10,overflow:"hidden",}}>
+         <Button title='generate new fruit' onPress={()=>navigation.navigate("Calories")}/>
+         </View>
+                     
+       </View>
        </View>
     </View>
   )
 }
+
