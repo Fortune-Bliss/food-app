@@ -33,7 +33,6 @@ const TopIcons = () => {
         <Text style={{ fontSize: 21, fontWeight: "600" }}>Plantwise</Text>
       </View>
       <View style={{ position: "absolute", right: 0 }}>
-        <AntDesign name="menufold" size={20} color="black" />
       </View>
     </View>
   );
@@ -375,7 +374,6 @@ export default function HomeScreen({ navigation }) {
               overflow: "hidden",
               marginVertical: 30,
               justifyContent: "space-between",
-              alignContent: ':"center',
               alignItems: "center",
               flexDirection: "row",
             }}

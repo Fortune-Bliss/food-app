@@ -1,145 +1,209 @@
-import { View, Text ,ScrollView,Button,TouchableOpacity,} from 'react-native'
-import React from 'react'
-import { Ionicons } from '@expo/vector-icons';
-import Friuts from '../components/fruits';
-import { Fontisto } from '@expo/vector-icons';
+import { View, Text, SafeAreaView, TouchableOpacity, ScrollView } from "react-native";
+import React from "react";
+import { AntDesign } from "@expo/vector-icons";
+import FruitItems from "../components/fruits";
+import { Fontisto ,Ionicons} from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 
-const TopView=()=>{
-    return(
-      <View style={{  flexDirection:"row",marginVertical:40,justifyContent:"center",alignItems: 'center'}}>
-  
-        <View>
-      
-     <View >
-      <View style={{
-        width:150,
-        height:150,
-        borderWidth:15,
-        borderBottomColor: "#ffeb3b",
-        borderRadius:100,
-        borderLeftColor:"#00695c",
-        borderTopColor:"#00695c",
-        borderRightColor:"#448aff",
-        
-        
-        
-      }}>
-        <View style={{margin:30}}>
-        <View style={{flexDirection:"row"}}>
-        <Text style={{fontWeight:"400",fontSize:27,marginVertical:5}}>450 </Text>
-        <Text style={{marginVertical:18,marginHorizontal:5}}>cal</Text>
-        </View>
-        <View style={{marginLeft:10}}>
-        <Ionicons name="chevron-forward" size={24} color="black" />
-        </View>
-        </View>
-      </View>
-       </View>
-        </View>
 
-         <View style={{marginHorizontal:20}}>
-          <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-         <View style={{backgroundColor:"#ffee58",width:8,height:8,flexDirection:"row",
-         borderRadius:4,marginHorizontal:5}}>
-          </View>vegetable (180cal)</Text>
-         
-          <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-         <View style={{backgroundColor:"#7e57c2",width:8,height:8,flexDirection:"row",
-         borderRadius:4,marginHorizontal:5}}>
-          </View>legume (150cal)</Text>
-  
-          <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-         <View style={{backgroundColor:"#ff5252",width:8,height:8,flexDirection:"row",
-         borderRadius:4,marginHorizontal:5}}>
-          </View>wholegrain (120cal)</Text>
-         </View>
-        </View>
-    )
-  }
-
-
-  
-const TextArea=()=>{
-    return(
-      <View style={{justifyContent:"center",alignItems:"center"}}>
-       <View style={{flexDirection:"row"}}>
-       <Text style={{marginRight:40,fontSize:30,fontWeight:"500",color:"#212121",textTransform:"capitalize"}}>current meal</Text>
-       <TouchableOpacity>
-      <Text style={{color:"",marginHorizontal:50,marginTop:10}}>edit items</Text>
-       </TouchableOpacity>
-       </View>
-      </View>
-    )
-  }
-  
-  
-  const FruitList=()=>{
-    return(
-      <View>
-     <Friuts/>
-      <Friuts/>
-      </View>
-    )
-  }
-
-
- const ShoppingButton=()=>{
-    return(
-    <TouchableOpacity style={{justifyContent:"center",alignItems: 'center',marginTop:20}}>
-        <View>
-            <Text style={{backgroundColor:"#ffebee",color:"black",paddingHorizontal:20,paddingVertical:20,borderRadius: 18,textTransform:"capitalize",fontWeight:"400"}}>add to shopping list</Text>
-        </View>
-    </TouchableOpacity>
-    )
- } 
-
- const BottomIcons=()=>{
-    return(
-        <View style={{justifyContent:"center",alignItems:"center",marginTop:20}}>
-              <View style={{flexDirection:"row" ,}}>
-         <View style={{}}>
-          <Fontisto name='day-sunny' size={18} style={{color:"black",}}/>
-             <Text style={{fontWeight:"400",fontSize:15,textTransform:"capitalize",color:"#212121",marginVertical:10}}>climate</Text>
-          </View>
-        <View style={{marginHorizontal:120,}}>
-          <Ionicons name='leaf-outline' size={18} style={{color:"black",}}/>
-              <Text style={{fontWeight:"400",fontSize:15,textTransform:"capitalize",color:"#212121",marginVertical:10,marginRight:10}}>B</Text>
-        </View>
-        <View style={{}}>
-        <FontAwesome name="money" size={18} style={{color:"",}} />
-              <Text style={{fontWeight:"bold",fontSize:15,textTransform:"capitalize",color:"#212121",marginVertical:10}}>$ 4-5</Text>
-        </View>
- </View>
-        </View>
-    )
- }
-
- function Calories(){
-    return(
-        <View>
-           <TopView/>
-           <TextArea/>
-           <FruitList/>
-           <ShoppingButton/>
-           <BottomIcons/>
-        </View>
-    )
- }
-export default function CaloriesScreen({navigation}) {
+const TopView = () => {
   return (
-    <ScrollView>
-        <View style={{flexDirection:"row",justifyContent:"center",alignItems:"center",marginTop:20}}>
-            <TouchableOpacity onPress={()=>navigation.navigate("Details")} >
-           <View >
-           <Ionicons name="ios-chevron-back-outline" size={24} color="black" />
-           </View>
-        </TouchableOpacity>
-           <View style={{justifyContent:"center",alignItems:"center"}}>
-               <Text style={{marginHorizontal:130,fontSize:25,fontWeight:"bold"}}>calories</Text>
-           </View>
+    <View style={{ margin: 30, flexDirection: "row" }}>
+      <View
+        style={{
+          borderWidth: 20,
+          borderTopColor: "#69f0ae",
+          width: 200,
+          height: 200,
+          borderRadius: 100,
+          borderBottomColor: "#ffee58",
+          borderLeftColor: "#69f0ae",
+          borderRightColor: "#ffee58",
+        }}
+      >
+        <View style={{ margin: 40, flexDirection: "row" ,marginTop:50}}>
+          <Text style={{ fontWeight: "bold", fontSize: 25 }}>450</Text>
+          <Text
+            style={{
+              marginLeft: 3,
+              marginTop: 7,
+              color: "#009688",
+              fontWeight: "bold",
+            }}
+          >
+            cal
+          </Text>
         </View>
-         <Calories/>
-    </ScrollView>
+      </View>
+      <View
+        style={{
+          alignItems: "center",
+          justifyContent: "center",
+          marginLeft: 30,
+        }}
+      >
+        <View
+          style={{ flexDirection: "row", marginVertical: 6, marginLeft: 6 }}
+        >
+          <View
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              backgroundColor: "#00e676",
+              marginTop: 8,
+            }}
+          />
+          <Text style={{ color: "#ff8a80", marginHorizontal: 5 }}>
+            vegetable (180 cal)
+          </Text>
+        </View>
+        <View
+          style={{ flexDirection: "row", marginVertical: 6, marginRight: 6 }}
+        >
+          <View
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              backgroundColor: "#8d6e63",
+              marginTop: 8,
+            }}
+          />
+          <Text style={{ color: "#ff8a80", marginHorizontal: 5 }}>
+            Legumes (15 cal)
+          </Text>
+        </View>
+        <View
+          style={{ flexDirection: "row", marginVertical: 6, marginLeft: 15 }}
+        >
+          <View
+            style={{
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              backgroundColor: "#ffff00",
+              marginTop: 8,
+            }}
+          />
+          <Text style={{ color: "#ff8a80", marginHorizontal: 5 }}>
+            Wholegrain (120 cal)
+          </Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const TextAreaa = () => {
+  return (
+    <View
+      style={{
+        alignItems: "center",
+        marginTop: 20,
+      }}
+    >
+      <Text style={{ fontSize: 25, fontWeight: "bold" }}>Current Food</Text>
+    </View>
+  );
+};
+
+const FruitItem = () => {
+  return (
+    <View>
+      <FruitItems />
+    </View>
+  );
+};
+
+
+const BottomIcons=()=>{
+  return(
+    <View style={{flexDirection:"row",justifyContent: 'space-between',margin:30}}>
+      <View style={{backgroundColor:"#69f0ae",padding:10,borderRadius:5}}>
+        <Fontisto name="day-sunny" size={20} color={"black"}/>
+     <Text style={{fontWeight:"bold",marginTop:10,color:"white"}}>Climate</Text>
+      </View>
+      <View  style={{backgroundColor:"#69f0ae",padding:15,borderRadius:5}}>
+        <Ionicons name="leaf-outline" size={20} color={"black"}/>
+      <Text style={{fontWeight:"bold",marginTop:10,color:"white"}}>B</Text>
+      </View>
+      <View  style={{backgroundColor:"#69f0ae",padding:10,borderRadius:5}}>
+        <FontAwesome name="money" size={20} color={"black"}/>
+     <Text style={{fontWeight:"bold",marginTop:10,color:"white"}}>$ 3.5</Text>
+      </View>
+    </View>
   )
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Calories() {
+  return (
+    <SafeAreaView>
+      <TopView />
+      <TextAreaa />
+      <FruitItem />
+      <BottomIcons/>
+    </SafeAreaView>
+  );
+}
+
+export default function CaloriesScreen({ navigation }) {
+  return (
+    <ScrollView style={{ flex: 1 }}>
+      <View
+        style={{
+          alignItems: "center",
+          margin: 30,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginHorizontal: 50,
+        }}
+      >
+        <TouchableOpacity
+          style={{}}
+          onPress={() => navigation.navigate("Details")}
+        >
+          <AntDesign name="back" size={24} color="black" />
+        </TouchableOpacity>
+        <View>
+          <Text style={{ fontWeight: "bold", fontSize: 26, marginLeft: 50 }}>
+            Calories Breakdown
+          </Text>
+        </View>
+      </View>
+      <Calories />
+      <TouchableOpacity style={{alignItems:"center",marginTop:10}} onPress={()=>navigation.navigate("Favorites")}>
+         <View style={{backgroundColor:"#f1f8e9",padding:8}}>
+          <Text style={{color:"",fontWeight:"bold",fontSize:25}}>Add To Favorites</Text>
+         </View>
+      </TouchableOpacity>
+    </ScrollView>
+  );
 }

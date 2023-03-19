@@ -1,179 +1,302 @@
-import { View, Text,ScrollView,SafeAreaView,Button,TouchableOpacity ,StyleSheet,TouchableHighlight} from 'react-native'
-import React from 'react'
-import { AntDesign } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import Friuts from '../components/fruits';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {
+  View,
+  Text,
+  ScrollView,
+  SafeAreaView,
+  Button,
+  TouchableOpacity,
+  StyleSheet,
+  TouchableHighlight,
+} from "react-native";
+import React, { useState } from "react";
+import { AntDesign } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import FruitItems from "../components/fruits";
+import Fruits from "./fruits";
 
+const TopMenu = () => {
+  return (
+    <View style={{ alignItems: "center" }}>
+      <Text
+        style={{
+          fontWeight: "bold",
+          marginTop: 25,
+          fontSize: 26,
+        }}
+      >
+        Meals Type
+      </Text>
+    </View>
+  );
+};
 
+const FirstText = () => {
+  const [bgColor, setBgColor] = useState("price");
+  return (
+    <View
+      style={{
+        justifyContent: "space-between",
+        alignItems: "center",
+        flexDirection: "row",
+        margin: 20,
+      }}
+    >
+      <TouchableOpacity
+        onPress={() => setBgColor("price")}
+        style={{
+          backgroundColor: bgColor == "price" ? "#ffcdd2" : "transparent",
+          padding: 10,
+        }}
+      >
+        <Text
+          style={{
+            color: bgColor == "price" ? "white" : "black",
+            fontSize: 15,
+            fontWeight: "bold",
+          }}
+        >
+          price
+        </Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity
+        onPress={() => setBgColor("meals")}
+        style={{
+          backgroundColor: bgColor == "meals" ? "#ffcdd2" : "transparent",
+          padding: 10,
+        }}
+      >
+        <Text
+          style={{
+            color: bgColor == "meals" ? "white" : "black",
+            fontSize: 15,
+          }}
+        >
+          Meal types
+        </Text>
+      </TouchableOpacity>
 
+      <TouchableOpacity
+        onPress={() => setBgColor("portion")}
+        style={{
+          backgroundColor: bgColor == "portion" ? "#ffcdd2" : "transparent",
+          padding: 10,
+        }}
+      >
+        <Text
+          style={{
+            color: bgColor == "portion" ? "white" : "black",
+            fontSize: 15,
+          }}
+        >
+          Protein
+        </Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
-
-
-
-
-const  TopIcons=()=>{
-    return(
-      <View style={{marginVertical:10,justifyContent:"center",alignItems: 'center',flexDirection:"row"}}>
-        <View style={{}}>
-          <Text style={{fontSize:21,marginHorizontal:130,fontWeight:"600"}}>meal Type</Text>
+const FoodItems = () => {
+  return (
+    <View style={{ flexDirection: "row", margin: 30 }}>
+      <View
+        style={{
+          width: 140,
+          height: 140,
+          borderWidth: 15,
+          borderColor: "#ffcdd2",
+          borderTopColor: "#009688",
+          borderLeftColor: "#009688",
+          borderBottomColor: "#ffeb3b",
+          borderRadius: 70,
+        }}
+      >
+        <View style={{ margin: 40, flexDirection: "row" }}>
+          <Text style={{ fontWeight: "bold", fontSize: 23 }}>450</Text>
+          <Text
+            style={{
+              marginLeft: 3,
+              marginTop: 7,
+              color: "#009688",
+              fontWeight: "bold",
+            }}
+          >
+            cal
+          </Text>
         </View>
-        <View style={{marginVertical:10}}>
-          <AntDesign name='menufold' size={20} color="black"/>
+      </View>
+
+      <View style={{ alignItems: "center", marginLeft: 90 }}>
+        <View style={{ flexDirection: "row", marginVertical: 4 }}>
+          <View
+            style={{
+              backgroundColor: "#26a69a",
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginHorizontal: 7,
+              marginTop: 6,
+            }}
+          />
+          <Text style={{ color: "", fontWeight: "bold" }}>
+            Vegatable (20 %)
+          </Text>
+        </View>
+
+        <View
+          style={{ flexDirection: "row", marginVertical: 4, marginRight: 18 }}
+        >
+          <View
+            style={{
+              backgroundColor: "#ffeb3b",
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginHorizontal: 7,
+              marginTop: 6,
+            }}
+          />
+          <Text style={{ color: "", fontWeight: "bold" }}>Proteins (20 %)</Text>
+        </View>
+
+        <View
+          style={{ flexDirection: "row", marginVertical: 4, marginRight: 8 }}
+        >
+          <View
+            style={{
+              backgroundColor: "#673ab7",
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginHorizontal: 5,
+              marginTop: 6,
+            }}
+          />
+          <Text style={{ color: "", fontWeight: "bold" }}>Saturate (30 %)</Text>
+        </View>
+
+        <View
+          style={{ flexDirection: "row", marginVertical: 4, marginRight: 30 }}
+        >
+          <View
+            style={{
+              backgroundColor: "#ff5252",
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginHorizontal: 5,
+              marginTop: 6,
+            }}
+          />
+          <Text style={{ color: "", fontWeight: "bold" }}>Mint (20 %)</Text>
+        </View>
+
+        <View
+          style={{ flexDirection: "row", marginVertical: 4, marginRight: 4 }}
+        >
+          <View
+            style={{
+              backgroundColor: "#eeff41",
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginHorizontal: 5,
+              marginTop: 6,
+            }}
+          />
+          <Text style={{ color: "", fontWeight: "bold" }}>
+            Pottasium (20 %)
+          </Text>
         </View>
       </View>
-    )
-}
-
-
-const  FirstView=()=>{
-  return(
-    <View style={{marginVertical:10,justifyContent:"center",alignItems: 'center'}}>
-      <View style={{flexDirection:"row"}}>
-       <Text style={{fontSize:17,fontWeight:"500",color:"#616161",textTransform:"capitalize"}}>price</Text>
-       <Text style={{fontSize:17,fontWeight:"500",color:"#616161",textTransform:"capitalize",marginHorizontal:95}}>meal type</Text>
-       <Text style={{fontSize:17,fontWeight:"500",color:"#616161",textTransform:"capitalize"}}>portion</Text>
-       </View>
-      </View>
-  )
-}
-
-const NewView=()=>{
-  return(
-    <View style={{marginVertical:30,justifyContent:"center",alignItems: 'center'}}>
-
-
-
-      
     </View>
-  )
-}
+  );
+};
 
-const SecondView=()=>{
-  return(
-    <View style={{  flexDirection:"row",marginVertical:20,justifyContent:"center",alignItems: 'center'}}>
-
-      <View>
-    
-   <View >
-    <View style={{
-      width:150,
-      height:150,
-      borderWidth:15,
-      borderBottomColor: "#ffeb3b",
-      borderRadius:100,
-      borderLeftColor:"#00695c",
-      borderTopColor:"#00695c",
-      borderRightColor:"#448aff",
-      
-      
-      
-    }}>
-      <View style={{margin:30}}>
-      <View style={{flexDirection:"row"}}>
-      <Text style={{fontWeight:"bold",fontSize:27,marginVertical:5}}>450 </Text>
-      <Text style={{marginVertical:18,marginHorizontal:5}}>cal</Text>
-      </View>
-      <View style={{marginLeft:10}}>
-      <Ionicons name="chevron-forward" size={24} color="black" />
-      </View>
-      </View>
-    </View>
-     </View>
-      </View>
-       
-       <View style={{marginHorizontal:50}}>
-       <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-       <View style={{backgroundColor:"#00695c",width:8,height:8,flexDirection:"row",
-       borderRadius:4,marginHorizontal:5}}>
-        </View>vegetable (50%)</Text>
-       
-        <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-       <View style={{backgroundColor:"#ffee58",width:8,height:8,flexDirection:"row",
-       borderRadius:4,marginHorizontal:5}}>
-        </View>protein (25%)</Text>
-       
-        <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-       <View style={{backgroundColor:"#7e57c2",width:8,height:8,flexDirection:"row",
-       borderRadius:4,marginHorizontal:5}}>
-        </View>fat (22%)</Text>
-
-        <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-       <View style={{backgroundColor:"#ff5252",width:8,height:8,flexDirection:"row",
-       borderRadius:4,marginHorizontal:5}}>
-        </View>iron(18%)</Text>
-       
-        <Text style={{fontWeight:"500",color:"#7b1fa2",textTransform:"capitalize",marginVertical:10}}> 
-       <View style={{backgroundColor:"#7b1fa2",width:8,height:8,flexDirection:"row",
-       borderRadius:4,marginHorizontal:5}}>
-        </View>saturate (5%)</Text>
-       </View>
-      </View>
-  )
-  }
-
-const FruitList=()=>{
-  return(
-    <View>
-   <Friuts/>
-    <Friuts/>
-    </View>
-  )
-}
-
-
-function Details(){
-  return(
-  <ScrollView>
- <TopIcons/>
- <FirstView/>
- <NewView/>
- <SecondView/>
-
- 
-
-  </ScrollView>
-  )
-}
-
-
-export default function DetailsScreen({navigation}) {
+const Fruit = () => {
   return (
     <View>
-      <Details/>
-     
-      <View>
-         
-
-    <View style={{justifyContent:"center",alignItems:"center"}}>
-     <View style={{flexDirection:"row"}}>
-     <Text style={{marginRight:40,fontSize:30,fontWeight:"500",color:"#212121",textTransform:"capitalize"}}>current meal</Text>
-     <TouchableOpacity onPress={()=>navigation.navigate("Fruits")} >
-    <Text style={{color:"",marginHorizontal:50,marginTop:10}}>edit items</Text>
-     </TouchableOpacity>
-     </View>
+      <FruitItems />
     </View>
-  
+  );
+};
 
-      </View>
+const CurrentMeals = () => {
+  return <View></View>;
+};
 
-      <FruitList/>
-      <View>
-        
-         <View  style={{overflow:"hidden",marginVertical:30,justifyContent:"center",alignContent: ':"center',alignItems:'center',flexDirection:"row"}}>
-      <View style={{flexDirection:"row",marginHorizontal:15}}>
-      <AntDesign name="hearto" size={24} color="black"style={{marginHorizontal:5}} />
-      <MaterialCommunityIcons style={{marginHorizontal:50}}  name="transit-connection-horizontal" size={24}/>
-        </View>
-
-         <View style={{borderRadius:10,overflow:"hidden",}}>
-         <Button title='generate new fruit' onPress={()=>navigation.navigate("Calories")}/>
-         </View>
-                     
-       </View>
-       </View>
-    </View>
-  )
+function Details() {
+  return (
+    <ScrollView>
+      <TopMenu />
+      <FirstText />
+      <FoodItems />
+      <Fruit />
+    </ScrollView>
+  );
 }
 
+export default function DetailsScreen({ navigation }) {
+  return (
+    <View>
+      <Details />
+      <View>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "center",
+            margin: 30,
+          }}
+        >
+          <Text
+            style={{
+              fontWeight: "bold",
+              fontSize: 25,
+              color: "#212121",
+            }}
+          >
+            Current Meals
+          </Text>
+          <TouchableOpacity onPress={() => navigation.navigate("Fruits")}>
+            <Text style={{ fontWeight: "400", marginTop: 7 }}>Edit items</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      <CurrentMeals />
+
+      <View>
+        <View
+          style={{
+            overflow: "hidden",
+            marginVertical: 30,
+            justifyContent: "space-between",
+            alignItems: "center",
+            flexDirection: "row",
+            margin: 27,
+          }}
+        >
+          <AntDesign
+            name="hearto"
+            size={24}
+            color="black"
+            style={{ marginHorizontal: 10 }}
+          />
+          <MaterialCommunityIcons
+            style={{}}
+            name="transit-connection-horizontal"
+            size={24}
+          />
+          <View style={{ borderRadius: 10, overflow: "hidden" }}>
+            <Button
+              title="generate new Fruit"
+              onPress={() => navigation.navigate("Calories")}
+            />
+          </View>
+        </View>
+      </View>
+    </View>
+  );
+}
