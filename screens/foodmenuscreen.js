@@ -293,6 +293,7 @@ export default function DetailsScreen({ navigation }) {
             <Button
               title="generate new Fruit"
               onPress={() => navigation.navigate("Calories")}
+              animationType="slide"
             />
           </View>
         </View>

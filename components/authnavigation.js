@@ -13,17 +13,31 @@ export default function Authnavigation() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-
-
-
-
-
-      <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
- <Stack.Screen name="Details" component={DetailsScreen} options={{headerShown:false}}/>
-<Stack.Screen name="Calories" component={CaloriesScreen} options={{headerShown:false}}/>
-<Stack.Screen name="Fruits" component={Fruits} options={{headerShown:false}}/>
-<Stack.Screen name="Favorites" component={Favorites} options={{headerShown:false}}/>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Details"
+          component={DetailsScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Calories"
+          component={CaloriesScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Fruits"
+          component={Fruits}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Favorites"
+          component={Favorites}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
