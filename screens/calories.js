@@ -1,10 +1,15 @@
-import { View, Text, SafeAreaView, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  SafeAreaView,
+  TouchableOpacity,
+  ScrollView,
+} from "react-native";
 import React from "react";
 import { AntDesign } from "@expo/vector-icons";
-import FruitItems from "../components/fruits";
-import { Fontisto ,Ionicons} from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-
+import FruitNames from "../screens/FruitNames"
+import { Fontisto, Ionicons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const TopView = () => {
   return (
@@ -13,16 +18,16 @@ const TopView = () => {
         style={{
           borderWidth: 20,
           borderTopColor: "#69f0ae",
-          width: 200,
-          height: 200,
-          borderRadius: 100,
+          width: 140,
+          height: 140,
+          borderRadius: 70,
           borderBottomColor: "#ffee58",
           borderLeftColor: "#69f0ae",
           borderRightColor: "#ffee58",
         }}
       >
-        <View style={{ margin: 40, flexDirection: "row" ,marginTop:50}}>
-          <Text style={{ fontWeight: "bold", fontSize: 25 }}>450</Text>
+        <View style={{ flexDirection: "row", marginTop: 20 ,marginLeft:10}}>
+          <Text style={{ fontWeight: "bold", fontSize: 20 }}>450</Text>
           <Text
             style={{
               marginLeft: 3,
@@ -38,13 +43,10 @@ const TopView = () => {
       <View
         style={{
           alignItems: "center",
-          justifyContent: "center",
-          marginLeft: 30,
+          marginLeft: 5,
         }}
       >
-        <View
-          style={{ flexDirection: "row", marginVertical: 6, marginLeft: 6 }}
-        >
+        <View style={{ flexDirection: "row", marginVertical: 6 }}>
           <View
             style={{
               width: 8,
@@ -111,65 +113,55 @@ const TextAreaa = () => {
 const FruitItem = () => {
   return (
     <View>
-      <FruitItems />
+      <FruitNames />
     </View>
   );
 };
 
-
-const BottomIcons=()=>{
-  return(
-    <View style={{flexDirection:"row",justifyContent: 'space-between',margin:30}}>
-      <View style={{backgroundColor:"#69f0ae",padding:10,borderRadius:5}}>
-        <Fontisto name="day-sunny" size={20} color={"black"}/>
-     <Text style={{fontWeight:"bold",marginTop:10,color:"white"}}>Climate</Text>
+const BottomIcons = () => {
+  return (
+    <View
+      style={{
+        flexDirection: "row",
+        justifyContent: "space-between",
+        margin: 30,
+      }}
+    >
+      <View
+        style={{ backgroundColor: "#69f0ae", padding: 10, borderRadius: 5 }}
+      >
+        <Fontisto name="day-sunny" size={20} color={"black"} />
+        <Text style={{ fontWeight: "bold", marginTop: 10, color: "white" }}>
+          Climate
+        </Text>
       </View>
-      <View  style={{backgroundColor:"#69f0ae",padding:15,borderRadius:5}}>
-        <Ionicons name="leaf-outline" size={20} color={"black"}/>
-      <Text style={{fontWeight:"bold",marginTop:10,color:"white"}}>B</Text>
+      <View
+        style={{ backgroundColor: "#69f0ae", padding: 15, borderRadius: 5 }}
+      >
+        <Ionicons name="leaf-outline" size={20} color={"black"} />
+        <Text style={{ fontWeight: "bold", marginTop: 10, color: "white" }}>
+          B
+        </Text>
       </View>
-      <View  style={{backgroundColor:"#69f0ae",padding:10,borderRadius:5}}>
-        <FontAwesome name="money" size={20} color={"black"}/>
-     <Text style={{fontWeight:"bold",marginTop:10,color:"white"}}>$ 3.5</Text>
+      <View
+        style={{ backgroundColor: "#69f0ae", padding: 10, borderRadius: 5 }}
+      >
+        <FontAwesome name="money" size={20} color={"black"} />
+        <Text style={{ fontWeight: "bold", marginTop: 10, color: "white" }}>
+          $ 3.5
+        </Text>
       </View>
     </View>
-  )
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  );
+};
 
 function Calories() {
   return (
     <SafeAreaView>
       <TopView />
       <TextAreaa />
-      <FruitItem />
-      <BottomIcons/>
+      <FruitItem/>
+      <BottomIcons />
     </SafeAreaView>
   );
 }
@@ -178,31 +170,34 @@ export default function CaloriesScreen({ navigation }) {
   return (
     <ScrollView style={{ flex: 1 }}>
       <View
-        style={{
-          alignItems: "center",
-          margin: 30,
-          flexDirection: "row",
-          justifyContent: "space-between",
-          marginHorizontal: 50,
+        style={{flexDirection:"row"
+        ,padding:30,
+        justifyContent:"space-between",
+      
         }}
       >
         <TouchableOpacity
           style={{}}
           onPress={() => navigation.navigate("Details")}
         >
-          <AntDesign name="back" size={24} color="black" />
+          <AntDesign name="back" size={24} color="black" style={{marginTop:10}} />
         </TouchableOpacity>
         <View>
-          <Text style={{ fontWeight: "bold", fontSize: 26, marginLeft: 50 }}>
+          <Text style={{ fontWeight: "bold", fontSize: 26, }}>
             Calories Breakdown
           </Text>
         </View>
       </View>
       <Calories />
-      <TouchableOpacity style={{alignItems:"center",marginTop:10}} onPress={()=>navigation.navigate("Favorites")}>
-         <View style={{backgroundColor:"#f1f8e9",padding:8}}>
-          <Text style={{color:"",fontWeight:"bold",fontSize:25}}>Add To Favorites</Text>
-         </View>
+      <TouchableOpacity
+        style={{ alignItems: "center", marginTop: 10 }}
+        onPress={() => navigation.navigate("Favorites")}
+      >
+        <View style={{ backgroundColor: "#f1f8e9", padding: 8 }}>
+          <Text style={{ fontWeight: "bold", fontSize: 25 }}>
+            Add To Favorites
+          </Text>
+        </View>
       </TouchableOpacity>
     </ScrollView>
   );

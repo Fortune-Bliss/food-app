@@ -1,7 +1,6 @@
 import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
-import Fruits from './fruits'
-import FruitItems from '../components/fruits'
+
 import { AntDesign } from '@expo/vector-icons';
 
 const Detail=()=>{
@@ -20,8 +19,8 @@ const Detail=()=>{
        borderRightColor: "#ffee58",
      }}
    >
-     <View style={{ marginTop:18,margin:20}}>
-       <Text style={{ fontWeight: "bold", fontSize: 17 }}>450</Text>
+     <View style={{padding:15 }}>
+       <Text style={{ fontWeight: "bold", fontSize: 15 }}>450</Text>
        <Text
          style={{
            marginLeft: 3,

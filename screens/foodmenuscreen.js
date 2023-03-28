@@ -6,14 +6,15 @@ import {
   Button,
   TouchableOpacity,
   StyleSheet,
-  TouchableHighlight,
+  TouchableWithoutFeedback,
+  Modal,
 } from "react-native";
 import React, { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import FruitItems from "../components/fruits";
-import Fruits from "./fruits";
+import FruitNames from "./FruitNames";
+
 
 const TopMenu = () => {
   return (
@@ -25,14 +26,14 @@ const TopMenu = () => {
           fontSize: 26,
         }}
       >
-        Meals Type
+        Meal Type
       </Text>
     </View>
   );
 };
 
 const FirstText = () => {
-  const [bgColor, setBgColor] = useState("price");
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <View
       style={{
@@ -42,57 +43,117 @@ const FirstText = () => {
         margin: 20,
       }}
     >
-      <TouchableOpacity
-        onPress={() => setBgColor("price")}
+      <View
         style={{
-          backgroundColor: bgColor == "price" ? "#ffcdd2" : "transparent",
+          backgroundColor: "white",
           padding: 10,
+          paddingHorizontal: 60,
         }}
       >
         <Text
           style={{
-            color: bgColor == "price" ? "white" : "black",
-            fontSize: 15,
-            fontWeight: "bold",
+            fontSize: 14,
+            fontWeight: "400",
+            color: "#616161",
+            textTransform: "capitalize",
+            backgroundColor: "white",
           }}
         >
           price
         </Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        onPress={() => setBgColor("meals")}
-        style={{
-          backgroundColor: bgColor == "meals" ? "#ffcdd2" : "transparent",
-          padding: 10,
-        }}
-      >
-        <Text
-          style={{
-            color: bgColor == "meals" ? "white" : "black",
-            fontSize: 15,
-          }}
+      </View>
+      <>
+        <TouchableOpacity
+          style={{ backgroundColor: "#b2dfdb" }}
+          onPress={() => setModalVisible(true)}
         >
-          Meal types
-        </Text>
-      </TouchableOpacity>
+          <Text style={{ padding: 10 }}>Nutritional balance</Text>
+        </TouchableOpacity>
+        <Modal style={{}} visible={modalVisible} animationType="fade">
+          <SafeAreaView
+            style={{
+              padding: 30,
+            }}
+          >
+            <View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <View>
+                  <Text>Nutritional balance</Text>
+                </View>
+                <View>
+                  <Text>Diabetes friendly</Text>
+                </View>
+              </View>
 
-      <TouchableOpacity
-        onPress={() => setBgColor("portion")}
-        style={{
-          backgroundColor: bgColor == "portion" ? "#ffcdd2" : "transparent",
-          padding: 10,
-        }}
-      >
-        <Text
-          style={{
-            color: bgColor == "portion" ? "white" : "black",
-            fontSize: 15,
-          }}
-        >
-          Protein
-        </Text>
-      </TouchableOpacity>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  marginTop: 26,
+                }}
+              >
+                <View>
+                  <Text>Low carb</Text>
+                </View>
+                <View>
+                  <Text>Nutrient dense</Text>
+                </View>
+                <View>
+                  <Text>paleo</Text>
+                </View>
+              </View>
+
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  marginTop: 26,
+                }}
+              >
+                <View>
+                  <Text>High protein</Text>
+                </View>
+                <View>
+                  <Text>Gluten free</Text>
+                </View>
+                <View>
+                  <Text>Keto</Text>
+                </View>
+              </View>
+            </View>
+          </SafeAreaView>
+          <TouchableWithoutFeedback
+            onPress={() => setModalVisible(false)}
+            style={{
+              marginTop: 10,
+              padding: 30,
+            }}
+          >
+            <View
+              style={{
+                alignItems: "center",
+                backgroundColor: "gray",
+                margin: 50,
+                borderRadius: 10,
+              }}
+            >
+              <Text
+                style={{
+                  padding: 9,
+                  color: "white",
+                }}
+              >
+                Back
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+        </Modal>
+      </>
     </View>
   );
 };
@@ -127,7 +188,7 @@ const FoodItems = () => {
         </View>
       </View>
 
-      <View style={{ alignItems: "center", marginLeft: 90 }}>
+      <View style={{ alignItems: "center", marginLeft: 10 }}>
         <View style={{ flexDirection: "row", marginVertical: 4 }}>
           <View
             style={{
@@ -139,9 +200,7 @@ const FoodItems = () => {
               marginTop: 6,
             }}
           />
-          <Text style={{ color: "", fontWeight: "bold" }}>
-            Vegatable (20 %)
-          </Text>
+          <Text style={{ fontWeight: "bold" }}>Vegatable (20 %)</Text>
         </View>
 
         <View
@@ -157,7 +216,7 @@ const FoodItems = () => {
               marginTop: 6,
             }}
           />
-          <Text style={{ color: "", fontWeight: "bold" }}>Proteins (20 %)</Text>
+          <Text style={{ fontWeight: "bold" }}>Proteins (20 %)</Text>
         </View>
 
         <View
@@ -173,7 +232,7 @@ const FoodItems = () => {
               marginTop: 6,
             }}
           />
-          <Text style={{ color: "", fontWeight: "bold" }}>Saturate (30 %)</Text>
+          <Text style={{ fontWeight: "bold" }}>Saturate (30 %)</Text>
         </View>
 
         <View
@@ -189,7 +248,7 @@ const FoodItems = () => {
               marginTop: 6,
             }}
           />
-          <Text style={{ color: "", fontWeight: "bold" }}>Mint (20 %)</Text>
+          <Text style={{ fontWeight: "bold" }}>Mint (20 %)</Text>
         </View>
 
         <View
@@ -205,99 +264,109 @@ const FoodItems = () => {
               marginTop: 6,
             }}
           />
-          <Text style={{ color: "", fontWeight: "bold" }}>
-            Pottasium (20 %)
-          </Text>
+          <Text style={{ fontWeight: "bold" }}>Pottasium (20 %)</Text>
         </View>
       </View>
     </View>
   );
 };
 
-const Fruit = () => {
-  return (
-    <View>
-      <FruitItems />
-    </View>
-  );
-};
 
-const CurrentMeals = () => {
-  return <View></View>;
-};
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
 
 function Details() {
   return (
     <ScrollView>
       <TopMenu />
       <FirstText />
-      <FoodItems />
-      <Fruit />
+      <FoodItems/>
+     
     </ScrollView>
   );
 }
 
 export default function DetailsScreen({ navigation }) {
   return (
-    <View>
-      <Details />
-      <View>
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            margin: 30,
-          }}
-        >
-          <Text
+    <ScrollView>
+      <SafeAreaView>
+        <Details />
+        <View>
+          <View
             style={{
-              fontWeight: "bold",
-              fontSize: 25,
-              color: "#212121",
+              flexDirection: "row",
+              justifyContent: "space-between",
+              alignItems: "center",
+              margin: 30,
             }}
           >
-            Current Meals
-          </Text>
-          <TouchableOpacity onPress={() => navigation.navigate("Fruits")}>
-            <Text style={{ fontWeight: "400", marginTop: 7 }}>Edit items</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-
-      <CurrentMeals />
-
-      <View>
-        <View
-          style={{
-            overflow: "hidden",
-            marginVertical: 30,
-            justifyContent: "space-between",
-            alignItems: "center",
-            flexDirection: "row",
-            margin: 27,
-          }}
-        >
-          <AntDesign
-            name="hearto"
-            size={24}
-            color="black"
-            style={{ marginHorizontal: 10 }}
-          />
-          <MaterialCommunityIcons
-            style={{}}
-            name="transit-connection-horizontal"
-            size={24}
-          />
-          <View style={{ borderRadius: 10, overflow: "hidden" }}>
-            <Button
-              title="generate new Fruit"
-              onPress={() => navigation.navigate("Calories")}
-              animationType="slide"
-            />
+            <Text
+              style={{
+                fontWeight: "bold",
+                fontSize: 25,
+                color: "#212121",
+              }}
+            >
+              Current Meals
+            </Text>
+            <TouchableOpacity  onPress={() => navigation.navigate("Fruit")}>
+              <Text style={{ fontWeight: "400", marginTop: 7 }}>
+                Edit items
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
-      </View>
-    </View>
+
+     
+        <FruitNames/>
+     
+
+        <View>
+          <View
+            style={{
+              overflow: "hidden",
+              marginVertical: 30,
+              justifyContent: "space-between",
+              alignItems: "center",
+              flexDirection: "row",
+              margin: 27,
+            }}
+          >
+            <AntDesign
+              name="hearto"
+              size={24}
+              color="black"
+              style={{ marginHorizontal: 10 }}
+            />
+            <MaterialCommunityIcons
+              name="transit-connection-horizontal"
+              size={24}
+            />
+            <View style={{ borderRadius: 10, overflow: "hidden" }}>
+              <Button
+                title="generate new Fruit"
+                onPress={() => navigation.navigate("Calories")}
+                animationType="slide"
+              />
+            </View>
+          </View>
+        </View>
+      </SafeAreaView>
+    </ScrollView>
   );
 }

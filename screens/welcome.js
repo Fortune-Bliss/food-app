@@ -9,6 +9,7 @@ import {
   Button,
   onPress,
   Modal,
+  TextInput,
 } from "react-native";
 import React, { useState } from "react";
 import { Entypo } from "@expo/vector-icons";
@@ -22,8 +23,7 @@ const TopIcons = () => {
   return (
     <View
       style={{
-        marginVertical: 10,
-        marginBottom: 40,
+        padding: 30,
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
@@ -76,155 +76,155 @@ const FirstView = () => {
           textTransform: "capitalize",
         }}
       >
-        portion
+        protein
       </Text>
     </View>
   );
 };
 
 const NewView = () => {
-  return (
-    <View
-      style={{
-        marginVertical: 30,
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "row",
-      }}
-    >
-      <Text
-        style={{
-          fontSize: 16,
-          fontWeight: "500",
-          color: "#212121",
-          textTransform: "capitalize",
-        }}
-      >
-        $ 2.6
-      </Text>
-      <Text
-        style={{
-          fontSize: 16,
-          fontWeight: "500",
-          color: "#212121",
-          textTransform: "capitalize",
-        }}
-      >
-        nutritional balance
-      </Text>
-      <Text
-        style={{
-          fontSize: 16,
-          fontWeight: "500",
-          color: "#212121",
-          textTransform: "capitalize",
-        }}
-      >
-        4
-      </Text>
-    </View>
-  );
-};
+ return (
+   <View
+     style={{
+       marginVertical: 30,
+       justifyContent: "space-between",
+       alignItems: "center",
+       flexDirection: "row",
+     }}
+   >
+     <Text
+       style={{
+         fontSize: 16,
+         fontWeight: "500",
+         color: "#212121",
+         textTransform: "capitalize",
+       }}
+     >
+       $ 2.6
+     </Text>
+     <Text
+       style={{
+         fontSize: 16,
+         fontWeight: "500",
+         color: "#212121",
+         textTransform: "capitalize",
+       }}
+     >
+       nutritional balance
+     </Text>
+     <Text
+       style={{
+         fontSize: 16,
+         fontWeight: "500",
+         color: "#212121",
+         textTransform: "capitalize",
+       }}
+     >
+       4
+     </Text>
+   </View>
+ );
+      };
 
 const SecondView = () => {
-  return (
-    <View
-      style={{
-        flexDirection: "row",
-        marginVertical: 30,
-        justifyContent: "flex-start",
-        alignItems: "center",
-      }}
-    >
-      <View
-        style={{
-          width: 150,
-          height: 150,
-          borderWidth: 15,
-          borderBottomColor: "#ffeb3b",
-          borderRadius: 100,
-          borderLeftColor: "#00695c",
-          borderTopColor: "#00695c",
-          borderRightColor: "#448aff",
-        }}
-      ></View>
-      <View style={{ marginLeft: 20 }}>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View
-            style={{
-              backgroundColor: "#00695c",
-              width: 8,
-              height: 8,
-              flexDirection: "row",
-              borderRadius: 4,
-              marginHorizontal: 5,
-            }}
-          ></View>
-          <Text
-            style={{
-              fontWeight: "bolder",
-              color: "#bcaaa4",
-              textTransform: "capitalize",
-            }}
-          >
-            {" "}
-            vegetable (50%)
-          </Text>
-        </View>
-        <View
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            marginVertical: 5,
-          }}
-        >
-          <View
-            style={{
-              backgroundColor: "#448aff",
-              width: 8,
-              height: 8,
-              flexDirection: "row",
-              borderRadius: 4,
-              marginHorizontal: 5,
-            }}
-          ></View>
-          <Text
-            style={{
-              fontWeight: "bolder",
-              color: "#bcaaa4",
-              textTransform: "capitalize",
-            }}
-          >
-            {" "}
-            carb (25%)
-          </Text>
-        </View>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <View
-            style={{
-              backgroundColor: "#ffeb3b",
-              width: 8,
-              height: 8,
-              flexDirection: "row",
-              borderRadius: 4,
-              marginHorizontal: 5,
-            }}
-          ></View>
-          <Text
-            style={{
-              fontWeight: "bolder",
-              color: "#bcaaa4",
-              textTransform: "capitalize",
-            }}
-          >
-            {" "}
-            protein (2%)
-          </Text>
-        </View>
-      </View>
-    </View>
-  );
-};
+ return (
+   <View
+     style={{
+       flexDirection: "row",
+       marginVertical: 30,
+       justifyContent: "flex-start",
+       alignItems: "center",
+     }}
+   >
+     <View
+       style={{
+         width: 150,
+         height: 150,
+         borderWidth: 15,
+         borderBottomColor: "#ffeb3b",
+         borderRadius: 100,
+         borderLeftColor: "#00695c",
+         borderTopColor: "#00695c",
+         borderRightColor: "#448aff",
+       }}
+     ></View>
+     <View style={{ marginLeft: 20 }}>
+       <View style={{ flexDirection: "row", alignItems: "center" }}>
+         <View
+           style={{
+             backgroundColor: "#00695c",
+             width: 8,
+             height: 8,
+             flexDirection: "row",
+             borderRadius: 4,
+             marginHorizontal: 5,
+           }}
+         ></View>
+         <Text
+           style={{
+             fontWeight: "500",
+             color: "#bcaaa4",
+             textTransform: "capitalize",
+           }}
+         >
+           {" "}
+           vegetable (50%)
+         </Text>
+       </View>
+       <View
+         style={{
+           flexDirection: "row",
+           alignItems: "center",
+           marginVertical: 5,
+         }}
+       >
+         <View
+           style={{
+             backgroundColor: "#448aff",
+             width: 8,
+             height: 8,
+             flexDirection: "row",
+             borderRadius: 4,
+             marginHorizontal: 5,
+           }}
+         ></View>
+         <Text
+           style={{
+             fontWeight: "500",
+             color: "#bcaaa4",
+             textTransform: "capitalize",
+           }}
+         >
+           {" "}
+           carb (25%)
+         </Text>
+       </View>
+       <View style={{ flexDirection: "row", alignItems: "center" }}>
+         <View
+           style={{
+             backgroundColor: "#ffeb3b",
+             width: 8,
+             height: 8,
+             flexDirection: "row",
+             borderRadius: 4,
+             marginHorizontal: 5,
+           }}
+         ></View>
+         <Text
+           style={{
+             fontWeight: "500",
+             color: "#bcaaa4",
+             textTransform: "capitalize",
+           }}
+         >
+           {" "}
+           protein (2%)
+         </Text>
+       </View>
+     </View>
+   </View>
+ );
+          };
 
 const TextView = () => {
   return (
@@ -238,7 +238,7 @@ const TextView = () => {
       <Text
         style={{
           color: "#bcaaa4",
-          fontWeight: "bolder",
+          fontWeight: "500",
           textTransform: "capitalize",
           marginVertical: 4,
         }}
@@ -248,9 +248,9 @@ const TextView = () => {
       <Text
         style={{
           color: "#bcaaa4",
-          fontWeight: "bolder",
+          fontWeight: "500",
           textTransform: "capitalize",
-          marginVertical: 4,
+
         }}
       >
         {" "}
@@ -332,7 +332,7 @@ const ClimateView = () => {
           borderRadius: 20,
         }}
       >
-        <FontAwesome name="money" size={18} style={{ color: "" }} />
+        <FontAwesome name="money" size={18}  />
         <Text
           style={{
             fontWeight: "400",
@@ -354,25 +354,36 @@ function Home() {
     <View style={{ flex: 1, backgroundColor: "transparent" }}>
       <TopIcons />
       <FirstView />
-      <NewView />
-      <SecondView />
+      <NewView/>
+      <SecondView/>
       <TextView />
       <ClimateView />
     </View>
   );
 }
 
+
+
+
+
+
+
+
+
+
+
+
 export default function HomeScreen({ navigation }) {
   return (
     <SafeAreaView style={{ marginHorizontal: 20 }}>
-      <ScrollView>
+      <ScrollView >
         <Home />
 
         <View>
           <View
             style={{
               overflow: "hidden",
-              marginVertical: 30,
+              marginVertical:0,
               justifyContent: "space-between",
               alignItems: "center",
               flexDirection: "row",
@@ -385,11 +396,10 @@ export default function HomeScreen({ navigation }) {
                 style={{ marginHorizontal: 10 }}
               />
               <MaterialCommunityIcons
-                style={{}}
                 name="transit-connection-horizontal"
                 size={24}
               />
-            <View style={{ borderRadius: 10, overflow: "hidden" }}>
+            <View style={{ borderRadius: 10, overflow: "hidden" }} >
               <Button
                 title="generate new meal"
                 onPress={() => navigation.navigate("Details")}
@@ -397,7 +407,7 @@ export default function HomeScreen({ navigation }) {
             </View>
 
             </View>
-
+            
         </View>
       </ScrollView>
     </SafeAreaView>
