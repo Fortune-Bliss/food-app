@@ -1,8 +1,8 @@
-import React from "react";
+import React ,{useState} from "react";
 import { View, Text, ScrollView } from "react-native";
 
 export default function FruitNames() {
-  const Fruits = [
+  const [Fruits,setFruits]= useState([
     {
       id: "Mangoes",
       quality: " (30 %)",
@@ -19,7 +19,8 @@ export default function FruitNames() {
       id: "pears",
       quality: " (0 %)",
     },
-  ];
+  ]);
+
   return (
     <ScrollView horizontal={true} 
     showsHorizontalScrollIndicator={false}>
